@@ -72,6 +72,8 @@ namespace TidalRPC
                     var title = processes[i].MainWindowTitle;
                     if (title.Length <= 3) continue; // Too short, probably a different instance of TIDAL (thread).
                     var content = title.Split(split);
+                    // ! If the array isn't 2 in size, break.
+                    if (content.Length != 2) continue;
                     Setup(content[0], content[1]);
                 }
 
