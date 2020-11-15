@@ -4,6 +4,9 @@ using System.Threading;
 using System.Threading.Tasks;
 using DiscordRPC;
 
+// Made by Shaw. (User-ID: 748622718647271544)
+// GitHub for this project: https://github.com/shaw4/tidal-rpc
+// GitHub: https://github.com/shaw4
 namespace TidalRPC
 {
     /// <summary>
@@ -48,25 +51,32 @@ namespace TidalRPC
         /// </summary>
         public static async Task Main()
         {
-            // Update the RPC every 4s in a new thread.
-            new Thread(() =>
-            {
-                while (true)
-                {
-                    var processes = Process.GetProcessesByName(processLookup);
-                    for (ushort i = 0; i < processes.Length; i++)
-                    {
-                        var title = processes[i].MainWindowTitle;
-                        if (title.Length <= 3) continue; // Too short, probably a different instance of TIDAL (thread).
-                        var content = title.Split(split);
-                        Setup(content[0], content[1]);
-                    }
-
-                    Thread.Sleep(delay);
-                }
-            }).Start();
+            // Update the RPC every 4s.
+            new Thread(Start).Start();
+            // ! Never close, so set the delay to -1 (~inf).
             await Task.Delay(-1);
+            // Dispose the client when the program exits.
             client.Dispose();
+        }
+
+        /// <summary>
+        /// Start updating the RPC.
+        /// </summary>
+        private static void Start()
+        {
+            while (true)
+            {
+                var processes = Process.GetProcessesByName(processLookup);
+                for (ushort i = 0; i < processes.Length; i++)
+                {
+                    var title = processes[i].MainWindowTitle;
+                    if (title.Length <= 3) continue; // Too short, probably a different instance of TIDAL (thread).
+                    var content = title.Split(split);
+                    Setup(content[0], content[1]);
+                }
+
+                Thread.Sleep(delay);
+            }
         }
 
         /// <summary>
@@ -77,23 +87,26 @@ namespace TidalRPC
         private static void Setup(string song, string artist) =>
             new Thread(() =>
             {
+                // ! If the client hasn't been initialized, return.
+                // ? Plugin for colored one-line comments: Better Comments
                 if (!client.IsInitialized)
                 {
                     client.OnReady += (sender, msg) =>
-                        Console.WriteLine($"Connected to Discord as {msg.User.Username}!");
+                        Console.WriteLine($"[+] Connected to Discord as {msg.User.Username}!",
+                            Console.ForegroundColor = ConsoleColor.Red);
                     client.Initialize();
                     return;
                 }
 
                 var array = staticRPC;
+                // Create the RPC.
                 client.SetPresence(new RichPresence
                 {
                     Details = song,
                     State = artist,
+                    // Fancy image
                     Assets = new Assets {LargeImageKey = array[0], LargeImageText = array[1]}
                 });
-                Console.ReadKey();
-                client.Dispose();
             }).Start();
     }
 }
