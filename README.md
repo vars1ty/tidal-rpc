@@ -7,6 +7,6 @@ Super basic TIDAL RPC which works by checking the window title of TIDAL, splitti
 
 ## Assembly
 - .NET 4.8
-   - C# 7.3
+   - C# 7.3 (will be updated to 9.0 later because why not)
 
 Made using Jetbrains Rider.
