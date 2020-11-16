@@ -26,9 +26,20 @@ namespace TidalRPC
         private static readonly string[] staticRPC = {"tidal", "TIDAL RPC made by Shaw."};
 
         /// <summary>
+        /// Static readonly <see cref="Assets"/> which will be used to update the RPC.
+        /// </summary>
+        private static readonly Assets staticAssets =
+            new Assets {LargeImageKey = staticRPC[0], LargeImageText = staticRPC[1]};
+
+        /// <summary>
         /// The application id.
         /// </summary>
         private const string application = "777323572188282900";
+
+        /// <summary>
+        /// Single <see cref="RichPresence"/> instance.
+        /// </summary>
+        private static RichPresence richPresenceInstance;
 
         /// <summary>
         /// TIDAL's main process name.
@@ -72,8 +83,13 @@ namespace TidalRPC
                     var title = processes[i].MainWindowTitle;
                     if (title.Length <= 3) continue; // Too short, probably a different instance of TIDAL (thread).
                     var content = title.Split(split);
-                    // ! If the array isn't 2 in size, break.
-                    if (content.Length != 2) continue;
+                    if (content.Length != 2)
+                    {
+                        // The size wasn't 2, perform a quick GC::Collect() and break.
+                        GC.Collect();
+                        continue;
+                    }
+
                     Setup(content[0], content[1]);
                 }
 
@@ -100,14 +116,13 @@ namespace TidalRPC
                     return;
                 }
 
-                var array = staticRPC;
                 // Create the RPC.
-                client.SetPresence(new RichPresence
+                client.SetPresence(richPresenceInstance = new RichPresence
                 {
                     Details = song,
                     State = artist,
                     // Fancy image
-                    Assets = new Assets {LargeImageKey = array[0], LargeImageText = array[1]}
+                    Assets = staticAssets
                 });
             }).Start();
     }
