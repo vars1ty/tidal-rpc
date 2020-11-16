@@ -16,11 +16,6 @@ namespace TidalRPC
     {
         #region Variables
         /// <summary>
-        /// A single <see cref="DiscordRpcClient"/> instance which we can re-use every time.
-        /// </summary>
-        private static readonly DiscordRpcClient client = new DiscordRpcClient(application);
-
-        /// <summary>
         /// Static readonly strings for the RPC.
         /// </summary>
         private static readonly string[] staticRPC = {"tidal", "TIDAL RPC made by Shaw."};
@@ -32,14 +27,19 @@ namespace TidalRPC
             new Assets {LargeImageKey = staticRPC[0], LargeImageText = staticRPC[1]};
 
         /// <summary>
+        /// Single <see cref="RichPresence"/> instance.
+        /// </summary>
+        private static readonly RichPresence richPresenceInstance = new();
+
+        /// <summary>
+        /// A single <see cref="DiscordRpcClient"/> instance which we can re-use every time.
+        /// </summary>
+        private static readonly DiscordRpcClient client = new(application);
+
+        /// <summary>
         /// The application id.
         /// </summary>
         private const string application = "777323572188282900";
-
-        /// <summary>
-        /// Single <see cref="RichPresence"/> instance.
-        /// </summary>
-        private static RichPresence richPresenceInstance;
 
         /// <summary>
         /// TIDAL's main process name.
@@ -109,21 +109,17 @@ namespace TidalRPC
                 // ? Plugin for colored one-line comments: Better Comments
                 if (!client.IsInitialized)
                 {
-                    client.OnReady += (sender, msg) =>
-                        Console.WriteLine($"[+] Connected to Discord as {msg.User.Username}!",
-                            Console.ForegroundColor = ConsoleColor.Red);
+                    client.OnReady += (_, msg) => Console.WriteLine($"[+] Connected to Discord as {msg.User.Username}!",
+                        Console.ForegroundColor = ConsoleColor.Red);
                     client.Initialize();
                     return;
                 }
 
                 // Create the RPC.
-                client.SetPresence(richPresenceInstance = new RichPresence
-                {
-                    Details = song,
-                    State = artist,
-                    // Fancy image
-                    Assets = staticAssets
-                });
+                richPresenceInstance.Details = song;
+                richPresenceInstance.State = artist;
+                richPresenceInstance.Assets = staticAssets;
+                client.SetPresence(richPresenceInstance);
             }).Start();
     }
 }
