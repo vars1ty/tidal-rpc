@@ -115,7 +115,7 @@ namespace TidalRPC
                     return;
                 }
 
-                // Create the RPC.
+                // Customize the RPC.
                 richPresenceInstance.Details = song;
                 richPresenceInstance.State = artist;
                 richPresenceInstance.Assets = staticAssets;
