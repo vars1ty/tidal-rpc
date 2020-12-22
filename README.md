@@ -6,7 +6,7 @@ Super basic TIDAL RPC which works by checking the window title of TIDAL, splitti
 - Discord-RPC-CSharp [https://github.com/Lachee/discord-rpc-csharp]
 
 ## Assembly
-- .NET 4.8
+- .NET Core 5.0
    - C# 9.0
 
 Made using Jetbrains Rider.

@@ -1,0 +1,19 @@
+D:\Users\shaw\Documents\GitHub\tidal-rpc\TIDAL RPC\TIDAL RPC\bin\Debug\net5.0\TIDAL RPC.exe
+D:\Users\shaw\Documents\GitHub\tidal-rpc\TIDAL RPC\TIDAL RPC\bin\Debug\net5.0\TIDAL RPC.deps.json
+D:\Users\shaw\Documents\GitHub\tidal-rpc\TIDAL RPC\TIDAL RPC\bin\Debug\net5.0\TIDAL RPC.runtimeconfig.json
+D:\Users\shaw\Documents\GitHub\tidal-rpc\TIDAL RPC\TIDAL RPC\bin\Debug\net5.0\TIDAL RPC.runtimeconfig.dev.json
+D:\Users\shaw\Documents\GitHub\tidal-rpc\TIDAL RPC\TIDAL RPC\bin\Debug\net5.0\TIDAL RPC.dll
+D:\Users\shaw\Documents\GitHub\tidal-rpc\TIDAL RPC\TIDAL RPC\bin\Debug\net5.0\ref\TIDAL RPC.dll
+D:\Users\shaw\Documents\GitHub\tidal-rpc\TIDAL RPC\TIDAL RPC\bin\Debug\net5.0\TIDAL RPC.pdb
+D:\Users\shaw\Documents\GitHub\tidal-rpc\TIDAL RPC\TIDAL RPC\bin\Debug\net5.0\DiscordRPC.dll
+D:\Users\shaw\Documents\GitHub\tidal-rpc\TIDAL RPC\TIDAL RPC\bin\Debug\net5.0\Newtonsoft.Json.dll
+D:\Users\shaw\Documents\GitHub\tidal-rpc\TIDAL RPC\TIDAL RPC\obj\Debug\net5.0\TIDAL RPC.csprojAssemblyReference.cache
+D:\Users\shaw\Documents\GitHub\tidal-rpc\TIDAL RPC\TIDAL RPC\obj\Debug\net5.0\TIDAL RPC.GeneratedMSBuildEditorConfig.editorconfig
+D:\Users\shaw\Documents\GitHub\tidal-rpc\TIDAL RPC\TIDAL RPC\obj\Debug\net5.0\TIDAL RPC.AssemblyInfoInputs.cache
+D:\Users\shaw\Documents\GitHub\tidal-rpc\TIDAL RPC\TIDAL RPC\obj\Debug\net5.0\TIDAL RPC.AssemblyInfo.cs
+D:\Users\shaw\Documents\GitHub\tidal-rpc\TIDAL RPC\TIDAL RPC\obj\Debug\net5.0\TIDAL RPC.csproj.CoreCompileInputs.cache
+D:\Users\shaw\Documents\GitHub\tidal-rpc\TIDAL RPC\TIDAL RPC\obj\Debug\net5.0\TIDAL RPC.csproj.CopyComplete
+D:\Users\shaw\Documents\GitHub\tidal-rpc\TIDAL RPC\TIDAL RPC\obj\Debug\net5.0\TIDAL RPC.dll
+D:\Users\shaw\Documents\GitHub\tidal-rpc\TIDAL RPC\TIDAL RPC\obj\Debug\net5.0\ref\TIDAL RPC.dll
+D:\Users\shaw\Documents\GitHub\tidal-rpc\TIDAL RPC\TIDAL RPC\obj\Debug\net5.0\TIDAL RPC.pdb
+D:\Users\shaw\Documents\GitHub\tidal-rpc\TIDAL RPC\TIDAL RPC\obj\Debug\net5.0\TIDAL RPC.genruntimeconfig.cache

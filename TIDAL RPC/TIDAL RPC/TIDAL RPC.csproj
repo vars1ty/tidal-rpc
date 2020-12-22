@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net5.0</TargetFramework>
+        <RootNamespace>TIDAL_RPC</RootNamespace>
+        <Nullable>enable</Nullable>
+        <Company>NaN</Company>
+        <Product>TIDAL Discord Rich Presence</Product>
+        <AssemblyVersion>1.1</AssemblyVersion>
+        <FileVersion>1.1</FileVersion>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+      <Optimize>true</Optimize>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Reference Include="DiscordRPC, Version=1.0.166.0, Culture=neutral, PublicKeyToken=null">
+        <HintPath>imp\DiscordRPC.dll</HintPath>
+      </Reference>
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="DiscordRichPresence" Version="1.0.169" />
+    </ItemGroup>
+
+</Project>

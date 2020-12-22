@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "T6253cdf5G9x9UT3PTiWgrWtQLDfej2nEtM0IjUcQdZRdhKvSSUdBWkFTm7RXtZ8Fpu11b0OSmdAvftr154HzQ==",
+  "success": true,
+  "projectFilePath": "D:\\Users\\shaw\\Documents\\GitHub\\tidal-rpc\\TIDAL RPC\\TIDAL RPC\\TIDAL RPC.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\shaw\\.nuget\\packages\\discordrichpresence\\1.0.169\\discordrichpresence.1.0.169.nupkg.sha512",
+    "C:\\Users\\shaw\\.nuget\\packages\\microsoft.netcore.platforms\\2.0.0\\microsoft.netcore.platforms.2.0.0.nupkg.sha512",
+    "C:\\Users\\shaw\\.nuget\\packages\\microsoft.win32.registry\\4.5.0\\microsoft.win32.registry.4.5.0.nupkg.sha512",
+    "C:\\Users\\shaw\\.nuget\\packages\\newtonsoft.json\\12.0.2\\newtonsoft.json.12.0.2.nupkg.sha512",
+    "C:\\Users\\shaw\\.nuget\\packages\\system.security.accesscontrol\\4.5.0\\system.security.accesscontrol.4.5.0.nupkg.sha512",
+    "C:\\Users\\shaw\\.nuget\\packages\\system.security.principal.windows\\4.5.0\\system.security.principal.windows.4.5.0.nupkg.sha512"
+  ],
+  "logs": []
+}
