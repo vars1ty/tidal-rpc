@@ -36,7 +36,7 @@ namespace TIDAL_RPC
         /// <summary>
         /// The application id.
         /// </summary>
-        private const string application = "791005761228111883";
+        private const string application = "796729599413059604";
 
         /// <summary>
         /// TIDAL's main process name.
