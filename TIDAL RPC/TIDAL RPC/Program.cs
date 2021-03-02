@@ -15,7 +15,7 @@ namespace TIDAL_RPC
         /// <summary>
         /// Static readonly strings for the RPC.
         /// </summary>
-        private static readonly string[] staticRPC = {"tidal", "TIDAL RPC made by Shaw."};
+        private static readonly string[] staticRPC = {"tidal", "TIDAL RPC made by riya."};
 
         /// <summary>
         /// Static readonly <see cref="Assets"/> which will be used to update the RPC.
@@ -75,15 +75,14 @@ namespace TIDAL_RPC
             while (true)
             {
                 var processes = Process.GetProcessesByName(processLookup);
-                for (ushort i = 0; i < processes.Length; i++)
+                for (short i = 0; i < processes.Length; i++)
                 {
                     var title = processes[i].MainWindowTitle;
                     if (title.Length <= 3) continue; // Too short, probably a different instance of TIDAL (thread).
                     var content = title.Split(split);
                     if (content.Length != 2)
                     {
-                        // The size wasn't 2, perform a quick GC::Collect() and break.
-                        GC.Collect();
+                        // The size wasn't 2, break.
                         continue;
                     }
 
